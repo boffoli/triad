@@ -39,6 +39,23 @@ make docker-runtime
 make compose
 ```
 
+## Deploy
+Docker Hub:
+```bash
+docker build -t triad:latest .
+docker tag triad:latest <dockerhub-user>/triad:latest
+docker login
+docker push <dockerhub-user>/triad:latest
+```
+
+GitHub Container Registry (GHCR):
+```bash
+docker build -t triad:latest .
+docker tag triad:latest ghcr.io/<github-user>/triad:latest
+echo <ghcr-token> | docker login ghcr.io -u <github-user> --password-stdin
+docker push ghcr.io/<github-user>/triad:latest
+```
+
 ## Configuration
 Environment variables:
 - `SPRING_PROFILES_ACTIVE=prod` (console logging)
