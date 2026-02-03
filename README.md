@@ -7,6 +7,14 @@ Spring Boot service that implements the layered assessment algorithm from `src/2
 ./mvnw spring-boot:run
 ```
 
+## Logging
+By default (non-prod), logs go to `logs/` and the console. In production (`SPRING_PROFILES_ACTIVE=prod`), logs go only to console (stdout/stderr).
+
+Override the log directory in dev:
+```bash
+LOG_DIR=/var/log/triad ./mvnw spring-boot:run
+```
+
 ## Endpoints
 - `GET /api/health`  
   Returns service health and a server timestamp. Useful for readiness checks and uptime monitoring.
