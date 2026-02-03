@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://triad.local/schema/trace-stats.json",
+  "title": "TraceStats",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["storedCount", "maxSize", "ttlSeconds"],
+  "properties": {
+    "storedCount": { "type": "integer", "minimum": 0 },
+    "maxSize": { "type": "integer", "minimum": 1 },
+    "ttlSeconds": { "type": "integer", "minimum": 0 }
+  }
+}

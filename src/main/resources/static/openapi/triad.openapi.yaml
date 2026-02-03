@@ -1,0 +1,597 @@
+openapi: 3.0.3
+info:
+  title: Triad API
+  version: 1.0.0
+  description: Layered assessment service API.
+paths:
+  /api/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Service health and timestamp
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+              example:
+                status: ok
+                timestamp: "2026-02-03T14:22:38.641085Z"
+  /api/assessment:
+    post:
+      summary: Run assessment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssessmentRequest'
+            example:
+              evidence:
+                productIndicators:
+                  - id: i1
+                    value: 0.8
+                    direction: BENEFIT
+                    lowerBound: 0.0
+                    upperBound: 1.0
+                    weight: 0.6
+                    critical: false
+                  - id: i2
+                    value: 0.6
+                    direction: BENEFIT
+                    lowerBound: 0.0
+                    upperBound: 1.0
+                    weight: 0.4
+                    critical: true
+                processSignals:
+                  - type: r1
+                    severity: 0.3
+                    lowerBound: 0.0
+                    upperBound: 1.0
+                    weight: 1.0
+                semanticEvidence:
+                  issues:
+                    - category: s1
+                      severity: 0.5
+                      lowerBound: 0.0
+                      upperBound: 1.0
+                      weight: 1.0
+                  reliability:
+                    coverage: 1.0
+                    confidence: 1.0
+              config:
+                axisWeights:
+                  product: 0.4
+                  process: 0.3
+                  semantic: 0.3
+                lambda: 1.0
+                maxGrade: 30
+      responses:
+        '200':
+          description: Assessment result with trace
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssessmentResult'
+              example:
+                grade: 16
+                maxGrade: 30
+                trace:
+                  evidence:
+                    productIndicators:
+                      - id: i1
+                        value: 0.8
+                        direction: BENEFIT
+                        lowerBound: 0.0
+                        upperBound: 1.0
+                        weight: 0.6
+                        critical: false
+                      - id: i2
+                        value: 0.6
+                        direction: BENEFIT
+                        lowerBound: 0.0
+                        upperBound: 1.0
+                        weight: 0.4
+                        critical: true
+                    processSignals:
+                      - type: r1
+                        severity: 0.3
+                        lowerBound: 0.0
+                        upperBound: 1.0
+                        weight: 1.0
+                    semanticEvidence:
+                      issues:
+                        - category: s1
+                          severity: 0.5
+                          lowerBound: 0.0
+                          upperBound: 1.0
+                          weight: 1.0
+                      reliability:
+                        coverage: 1.0
+                        confidence: 1.0
+                  config:
+                    axisWeights:
+                      product: 0.4
+                      process: 0.3
+                      semantic: 0.3
+                    lambda: 1.0
+                    maxGrade: 30
+                  normalizedEvidence:
+                    productIndicators:
+                      - id: i1
+                        value: 0.8
+                        weight: 0.6
+                        critical: false
+                      - id: i2
+                        value: 0.6
+                        weight: 0.4
+                        critical: true
+                    processSignals:
+                      - type: r1
+                        severity: 0.3
+                        weight: 1.0
+                    semanticIssues:
+                      - category: s1
+                        severity: 0.5
+                        weight: 1.0
+                    semanticReliability: 1.0
+                  axisScores:
+                    productQuality: 0.432
+                    processQuality: 0.7408182206817179
+                    semanticAlignment: 0.5
+                  effectiveAxisWeights:
+                    product: 0.4
+                    process: 0.3
+                    semantic: 0.3
+                  globalScore: 0.5450454662045153
+                  grade: 16
+                  notEvaluable: false
+                  mainContributors:
+                    - axis: PQ
+                      indicatorId: i1
+                      value: 0.192
+                    - axis: SA
+                      indicatorId: s1
+                      value: -0.15
+                    - axis: PrQ
+                      indicatorId: r1
+                      value: -0.09
+                    - axis: PQ
+                      indicatorId: i2
+                      value: -0.064
+                  traceId: 317db31e-1474-400a-9030-5c695d4b273a
+        '400':
+          description: Validation error
+  /api/trace/{id}:
+    get:
+      summary: Get trace by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Trace found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssessmentTrace'
+              example:
+                evidence:
+                  productIndicators:
+                    - id: i1
+                      value: 0.8
+                      direction: BENEFIT
+                      lowerBound: 0.0
+                      upperBound: 1.0
+                      weight: 0.6
+                      critical: false
+                    - id: i2
+                      value: 0.6
+                      direction: BENEFIT
+                      lowerBound: 0.0
+                      upperBound: 1.0
+                      weight: 0.4
+                      critical: true
+                  processSignals:
+                    - type: r1
+                      severity: 0.3
+                      lowerBound: 0.0
+                      upperBound: 1.0
+                      weight: 1.0
+                  semanticEvidence:
+                    issues:
+                      - category: s1
+                        severity: 0.5
+                        lowerBound: 0.0
+                        upperBound: 1.0
+                        weight: 1.0
+                    reliability:
+                      coverage: 1.0
+                      confidence: 1.0
+                config:
+                  axisWeights:
+                    product: 0.4
+                    process: 0.3
+                    semantic: 0.3
+                  lambda: 1.0
+                  maxGrade: 30
+                normalizedEvidence:
+                  productIndicators:
+                    - id: i1
+                      value: 0.8
+                      weight: 0.6
+                      critical: false
+                    - id: i2
+                      value: 0.6
+                      weight: 0.4
+                      critical: true
+                  processSignals:
+                    - type: r1
+                      severity: 0.3
+                      weight: 1.0
+                  semanticIssues:
+                    - category: s1
+                      severity: 0.5
+                      weight: 1.0
+                  semanticReliability: 1.0
+                axisScores:
+                  productQuality: 0.432
+                  processQuality: 0.7408182206817179
+                  semanticAlignment: 0.5
+                effectiveAxisWeights:
+                  product: 0.4
+                  process: 0.3
+                  semantic: 0.3
+                globalScore: 0.5450454662045153
+                grade: 16
+                notEvaluable: false
+                mainContributors:
+                  - axis: PQ
+                    indicatorId: i1
+                    value: 0.192
+                  - axis: SA
+                    indicatorId: s1
+                    value: -0.15
+                  - axis: PrQ
+                    indicatorId: r1
+                    value: -0.09
+                  - axis: PQ
+                    indicatorId: i2
+                    value: -0.064
+                traceId: 317db31e-1474-400a-9030-5c695d4b273a
+        '404':
+          description: Trace not found
+    delete:
+      summary: Delete trace by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          description: Trace not found
+  /api/trace:
+    delete:
+      summary: Clear all traces
+      responses:
+        '204':
+          description: Cleared
+  /api/trace/stats:
+    get:
+      summary: Trace store stats
+      responses:
+        '200':
+          description: Trace store statistics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TraceStats'
+              example:
+                storedCount: 1
+                maxSize: 1000
+                ttlSeconds: 86400
+  /api/trace/purge:
+    post:
+      summary: Purge expired traces
+      responses:
+        '200':
+          description: Purge result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TracePurgeResponse'
+              example:
+                removed: 3
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      required: [status, timestamp]
+      properties:
+        status:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+    AssessmentRequest:
+      type: object
+      required: [evidence, config]
+      properties:
+        evidence:
+          $ref: '#/components/schemas/Evidence'
+        config:
+          $ref: '#/components/schemas/PedagogicalConfig'
+    AssessmentResult:
+      type: object
+      required: [grade, maxGrade, trace]
+      properties:
+        grade:
+          type: integer
+        maxGrade:
+          type: integer
+          minimum: 1
+        trace:
+          $ref: '#/components/schemas/AssessmentTrace'
+    AssessmentTrace:
+      type: object
+      required:
+        - evidence
+        - config
+        - normalizedEvidence
+        - axisScores
+        - effectiveAxisWeights
+        - globalScore
+        - grade
+        - notEvaluable
+        - mainContributors
+        - traceId
+      properties:
+        evidence:
+          $ref: '#/components/schemas/Evidence'
+        config:
+          $ref: '#/components/schemas/PedagogicalConfig'
+        normalizedEvidence:
+          $ref: '#/components/schemas/NormalizedEvidence'
+        axisScores:
+          $ref: '#/components/schemas/AxisScores'
+        effectiveAxisWeights:
+          $ref: '#/components/schemas/EffectiveAxisWeights'
+        globalScore:
+          type: number
+          nullable: true
+        grade:
+          type: integer
+          nullable: true
+        notEvaluable:
+          type: boolean
+        mainContributors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Contribution'
+        traceId:
+          type: string
+    Evidence:
+      type: object
+      properties:
+        productIndicators:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductIndicator'
+        processSignals:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessSignal'
+        semanticEvidence:
+          $ref: '#/components/schemas/SemanticEvidence'
+    ProductIndicator:
+      type: object
+      required: [id, value, direction, lowerBound, upperBound, weight, critical]
+      properties:
+        id:
+          type: string
+        value:
+          type: number
+        direction:
+          type: string
+          enum: [BENEFIT, COST]
+        lowerBound:
+          type: number
+        upperBound:
+          type: number
+        weight:
+          type: number
+          minimum: 0
+        critical:
+          type: boolean
+    ProcessSignal:
+      type: object
+      required: [type, severity, lowerBound, upperBound, weight]
+      properties:
+        type:
+          type: string
+        severity:
+          type: number
+        lowerBound:
+          type: number
+        upperBound:
+          type: number
+        weight:
+          type: number
+          minimum: 0
+    SemanticEvidence:
+      type: object
+      properties:
+        issues:
+          type: array
+          items:
+            $ref: '#/components/schemas/SemanticIssue'
+        reliability:
+          $ref: '#/components/schemas/SemanticReliability'
+    SemanticIssue:
+      type: object
+      required: [category, severity, lowerBound, upperBound, weight]
+      properties:
+        category:
+          type: string
+        severity:
+          type: number
+        lowerBound:
+          type: number
+        upperBound:
+          type: number
+        weight:
+          type: number
+          minimum: 0
+    SemanticReliability:
+      type: object
+      required: [coverage, confidence]
+      properties:
+        coverage:
+          type: number
+          minimum: 0
+          maximum: 1
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
+    PedagogicalConfig:
+      type: object
+      required: [axisWeights, lambda, maxGrade]
+      properties:
+        axisWeights:
+          $ref: '#/components/schemas/AxisWeights'
+        lambda:
+          type: number
+          exclusiveMinimum: 0
+        maxGrade:
+          type: integer
+          minimum: 1
+    AxisWeights:
+      type: object
+      required: [product, process, semantic]
+      properties:
+        product:
+          type: number
+          minimum: 0
+        process:
+          type: number
+          minimum: 0
+        semantic:
+          type: number
+          minimum: 0
+    NormalizedEvidence:
+      type: object
+      required: [productIndicators, processSignals, semanticIssues, semanticReliability]
+      properties:
+        productIndicators:
+          type: array
+          items:
+            $ref: '#/components/schemas/NormalizedProductIndicator'
+        processSignals:
+          type: array
+          items:
+            $ref: '#/components/schemas/NormalizedProcessSignal'
+        semanticIssues:
+          type: array
+          items:
+            $ref: '#/components/schemas/NormalizedSemanticIssue'
+        semanticReliability:
+          type: number
+          minimum: 0
+          maximum: 1
+    NormalizedProductIndicator:
+      type: object
+      required: [id, value, weight, critical]
+      properties:
+        id:
+          type: string
+        value:
+          type: number
+        weight:
+          type: number
+        critical:
+          type: boolean
+    NormalizedProcessSignal:
+      type: object
+      required: [type, severity, weight]
+      properties:
+        type:
+          type: string
+        severity:
+          type: number
+        weight:
+          type: number
+    NormalizedSemanticIssue:
+      type: object
+      required: [category, severity, weight]
+      properties:
+        category:
+          type: string
+        severity:
+          type: number
+        weight:
+          type: number
+    AxisScores:
+      type: object
+      required: [productQuality, processQuality, semanticAlignment]
+      properties:
+        productQuality:
+          type: number
+          nullable: true
+        processQuality:
+          type: number
+          nullable: true
+        semanticAlignment:
+          type: number
+          nullable: true
+    EffectiveAxisWeights:
+      type: object
+      required: [product, process, semantic]
+      properties:
+        product:
+          type: number
+          nullable: true
+        process:
+          type: number
+          nullable: true
+        semantic:
+          type: number
+          nullable: true
+    Contribution:
+      type: object
+      required: [axis, indicatorId, value]
+      properties:
+        axis:
+          type: string
+          enum: [PQ, PrQ, SA]
+        indicatorId:
+          type: string
+        value:
+          type: number
+    TraceStats:
+      type: object
+      required: [storedCount, maxSize, ttlSeconds]
+      properties:
+        storedCount:
+          type: integer
+          minimum: 0
+        maxSize:
+          type: integer
+          minimum: 1
+        ttlSeconds:
+          type: integer
+          minimum: 0
+    TracePurgeResponse:
+      type: object
+      required: [removed]
+      properties:
+        removed:
+          type: integer
+          minimum: 0

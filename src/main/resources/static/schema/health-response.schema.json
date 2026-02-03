@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://triad.local/schema/health-response.json",
+  "title": "HealthResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "timestamp"],
+  "properties": {
+    "status": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" }
+  }
+}

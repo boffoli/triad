@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://triad.local/schema/assessment-result.json",
+  "title": "AssessmentResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["grade", "maxGrade", "trace"],
+  "properties": {
+    "grade": { "type": "integer" },
+    "maxGrade": { "type": "integer", "minimum": 1 },
+    "trace": { "$ref": "#/$defs/AssessmentTrace" }
+  },
+  "$defs": {
+    "AssessmentTrace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence",
+        "config",
+        "normalizedEvidence",
+        "axisScores",
+        "effectiveAxisWeights",
+        "globalScore",
+        "grade",
+        "notEvaluable",
+        "mainContributors",
+        "traceId"
+      ],
+      "properties": {
+        "evidence": { "$ref": "#/$defs/Evidence" },
+        "config": { "$ref": "#/$defs/PedagogicalConfig" },
+        "normalizedEvidence": { "$ref": "#/$defs/NormalizedEvidence" },
+        "axisScores": { "$ref": "#/$defs/AxisScores" },
+        "effectiveAxisWeights": { "$ref": "#/$defs/EffectiveAxisWeights" },
+        "globalScore": { "type": ["number", "null"] },
+        "grade": { "type": ["integer", "null"] },
+        "notEvaluable": { "type": "boolean" },
+        "mainContributors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Contribution" }
+        },
+        "traceId": { "type": "string" }
+      }
+    },
+    "Evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "productIndicators": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ProductIndicator" }
+        },
+        "processSignals": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ProcessSignal" }
+        },
+        "semanticEvidence": { "$ref": "#/$defs/SemanticEvidence" }
+      }
+    },
+    "ProductIndicator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "value", "direction", "lowerBound", "upperBound", "weight", "critical"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "value": { "type": "number" },
+        "direction": { "type": "string", "enum": ["BENEFIT", "COST"] },
+        "lowerBound": { "type": "number" },
+        "upperBound": { "type": "number" },
+        "weight": { "type": "number", "minimum": 0 },
+        "critical": { "type": "boolean" }
+      }
+    },
+    "ProcessSignal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "severity", "lowerBound", "upperBound", "weight"],
+      "properties": {
+        "type": { "type": "string", "minLength": 1 },
+        "severity": { "type": "number" },
+        "lowerBound": { "type": "number" },
+        "upperBound": { "type": "number" },
+        "weight": { "type": "number", "minimum": 0 }
+      }
+    },
+    "SemanticEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "issues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/SemanticIssue" }
+        },
+        "reliability": { "$ref": "#/$defs/SemanticReliability" }
+      }
+    },
+    "SemanticIssue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "severity", "lowerBound", "upperBound", "weight"],
+      "properties": {
+        "category": { "type": "string", "minLength": 1 },
+        "severity": { "type": "number" },
+        "lowerBound": { "type": "number" },
+        "upperBound": { "type": "number" },
+        "weight": { "type": "number", "minimum": 0 }
+      }
+    },
+    "SemanticReliability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coverage", "confidence"],
+      "properties": {
+        "coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "PedagogicalConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["axisWeights", "lambda", "maxGrade"],
+      "properties": {
+        "axisWeights": { "$ref": "#/$defs/AxisWeights" },
+        "lambda": { "type": "number", "exclusiveMinimum": 0 },
+        "maxGrade": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "AxisWeights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product", "process", "semantic"],
+      "properties": {
+        "product": { "type": "number", "minimum": 0 },
+        "process": { "type": "number", "minimum": 0 },
+        "semantic": { "type": "number", "minimum": 0 }
+      }
+    },
+    "NormalizedEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["productIndicators", "processSignals", "semanticIssues", "semanticReliability"],
+      "properties": {
+        "productIndicators": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/NormalizedProductIndicator" }
+        },
+        "processSignals": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/NormalizedProcessSignal" }
+        },
+        "semanticIssues": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/NormalizedSemanticIssue" }
+        },
+        "semanticReliability": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "NormalizedProductIndicator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "value", "weight", "critical"],
+      "properties": {
+        "id": { "type": "string" },
+        "value": { "type": "number" },
+        "weight": { "type": "number" },
+        "critical": { "type": "boolean" }
+      }
+    },
+    "NormalizedProcessSignal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "severity", "weight"],
+      "properties": {
+        "type": { "type": "string" },
+        "severity": { "type": "number" },
+        "weight": { "type": "number" }
+      }
+    },
+    "NormalizedSemanticIssue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "severity", "weight"],
+      "properties": {
+        "category": { "type": "string" },
+        "severity": { "type": "number" },
+        "weight": { "type": "number" }
+      }
+    },
+    "AxisScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["productQuality", "processQuality", "semanticAlignment"],
+      "properties": {
+        "productQuality": { "type": ["number", "null"] },
+        "processQuality": { "type": ["number", "null"] },
+        "semanticAlignment": { "type": ["number", "null"] }
+      }
+    },
+    "EffectiveAxisWeights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product", "process", "semantic"],
+      "properties": {
+        "product": { "type": ["number", "null"] },
+        "process": { "type": ["number", "null"] },
+        "semantic": { "type": ["number", "null"] }
+      }
+    },
+    "Contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["axis", "indicatorId", "value"],
+      "properties": {
+        "axis": { "type": "string", "enum": ["PQ", "PrQ", "SA"] },
+        "indicatorId": { "type": "string" },
+        "value": { "type": "number" }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://triad.local/schema/assessment-trace.json",
+  "$ref": "assessment-result.schema.json#/$defs/AssessmentTrace"
+}

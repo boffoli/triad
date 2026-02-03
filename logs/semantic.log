@@ -1,0 +1,88 @@
+2026-02-03 12:26:11.919 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Valutazione avviata (traceId=f9546c32-50f7-48ab-b6aa-27d94b598883).
+2026-02-03 12:26:11.919 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 12:26:11.920 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 12:26:11.920 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 12:26:11.920 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 12:26:11.920 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 12:26:11.921 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 12:26:11.921 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Mappatura voto: voto finale calcolato.
+2026-02-03 12:26:11.921 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Contributi principali: identificati 4 elementi.
+2026-02-03 12:26:11.922 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Valutazione completata: risultato disponibile.
+2026-02-03 12:26:11.922 [http-nio-8080-exec-4] INFO  com.edmalg.assessment.semantic traceId=f9546c32-50f7-48ab-b6aa-27d94b598883 - Valutazione terminata (traceId=f9546c32-50f7-48ab-b6aa-27d94b598883).
+2026-02-03 12:32:38.970 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Valutazione avviata (traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d).
+2026-02-03 12:32:38.971 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 12:32:38.972 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 12:32:38.972 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 12:32:38.972 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 12:32:38.972 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 12:32:38.973 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 12:32:38.973 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Mappatura voto: voto finale calcolato.
+2026-02-03 12:32:38.973 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Contributi principali: identificati 4 elementi.
+2026-02-03 12:32:38.974 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Valutazione completata: risultato disponibile.
+2026-02-03 12:32:38.974 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d - Valutazione terminata (traceId=21f99116-fb5f-4ba9-93ed-5f920fe2564d).
+2026-02-03 12:45:42.745 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Valutazione avviata (traceId=848036de-7297-4a5b-b2d4-afc135fd7317).
+2026-02-03 12:45:42.746 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 12:45:42.747 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 12:45:42.747 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 12:45:42.747 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 12:45:42.747 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 12:45:42.748 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 12:45:42.748 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Mappatura voto: voto finale calcolato.
+2026-02-03 12:45:42.748 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Contributi principali: identificati 4 elementi.
+2026-02-03 12:45:42.749 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Valutazione completata: risultato disponibile.
+2026-02-03 12:45:42.749 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=848036de-7297-4a5b-b2d4-afc135fd7317 - Valutazione terminata (traceId=848036de-7297-4a5b-b2d4-afc135fd7317).
+2026-02-03 12:58:52.727 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Valutazione avviata (traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109).
+2026-02-03 12:58:52.727 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 12:58:52.728 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 12:58:52.729 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 12:58:52.730 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 12:58:52.730 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 12:58:52.730 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 12:58:52.730 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Mappatura voto: voto finale calcolato.
+2026-02-03 12:58:52.731 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Contributi principali: identificati 4 elementi.
+2026-02-03 12:58:52.731 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Valutazione completata: risultato disponibile.
+2026-02-03 12:58:52.731 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109 - Valutazione terminata (traceId=0eedd342-4ad7-4951-a9dc-d7201e8f9109).
+2026-02-03 15:22:44.802 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Valutazione avviata (traceId=317db31e-1474-400a-9030-5c695d4b273a).
+2026-02-03 15:22:44.803 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 15:22:44.803 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 15:22:44.805 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 15:22:44.805 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 15:22:44.805 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 15:22:44.806 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 15:22:44.807 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Mappatura voto: voto finale calcolato.
+2026-02-03 15:22:44.807 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Contributi principali: identificati 4 elementi.
+2026-02-03 15:22:44.808 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Valutazione completata: risultato disponibile.
+2026-02-03 15:22:44.808 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=317db31e-1474-400a-9030-5c695d4b273a - Valutazione terminata (traceId=317db31e-1474-400a-9030-5c695d4b273a).
+2026-02-03 15:42:18.626 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Valutazione avviata (traceId=543c85b6-8b85-4531-8113-6e8322fd8658).
+2026-02-03 15:42:18.626 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 15:42:18.627 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 15:42:18.628 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 15:42:18.629 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 15:42:18.629 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 15:42:18.630 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 15:42:18.630 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Mappatura voto: voto finale calcolato.
+2026-02-03 15:42:18.630 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Contributi principali: identificati 4 elementi.
+2026-02-03 15:42:18.631 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Valutazione completata: risultato disponibile.
+2026-02-03 15:42:18.631 [http-nio-8080-exec-7] INFO  com.triad.assessment.semantic traceId=543c85b6-8b85-4531-8113-6e8322fd8658 - Valutazione terminata (traceId=543c85b6-8b85-4531-8113-6e8322fd8658).
+2026-02-03 15:46:11.889 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Valutazione avviata (traceId=1dce522f-bf73-424c-964f-40f1323d6936).
+2026-02-03 15:46:11.889 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 15:46:11.890 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 15:46:11.890 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 15:46:11.890 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 15:46:11.890 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 15:46:11.890 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 15:46:11.891 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Mappatura voto: voto finale calcolato.
+2026-02-03 15:46:11.891 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Contributi principali: identificati 4 elementi.
+2026-02-03 15:46:11.891 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Valutazione completata: risultato disponibile.
+2026-02-03 15:46:11.891 [http-nio-8080-exec-9] INFO  com.triad.assessment.semantic traceId=1dce522f-bf73-424c-964f-40f1323d6936 - Valutazione terminata (traceId=1dce522f-bf73-424c-964f-40f1323d6936).
+2026-02-03 16:16:06.154 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Valutazione avviata (traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb).
+2026-02-03 16:16:06.155 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Input ricevuto: avvio validazione evidenze e configurazione.
+2026-02-03 16:16:06.156 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Normalizzazione: indicatori resi confrontabili in scala 0-1.
+2026-02-03 16:16:06.157 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.
+2026-02-03 16:16:06.157 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Disponibilita evidenze: assi disponibili -> prodotto=true, processo=true, semantica=true.
+2026-02-03 16:16:06.157 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Pesi assi: ricalibrati sugli assi disponibili.
+2026-02-03 16:16:06.158 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Fusione punteggi: combinazione degli assi completata.
+2026-02-03 16:16:06.158 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Mappatura voto: voto finale calcolato.
+2026-02-03 16:16:06.158 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Contributi principali: identificati 4 elementi.
+2026-02-03 16:16:06.159 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Valutazione completata: risultato disponibile.
+2026-02-03 16:16:06.159 [http-nio-8080-exec-4] INFO  com.triad.assessment.semantic traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb - Valutazione terminata (traceId=1e872173-8472-4d4b-83d7-b666d6dc81cb).

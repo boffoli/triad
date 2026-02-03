@@ -1,0 +1,56 @@
+{
+  "evidence": {
+    "productIndicators": [
+      {
+        "id": "i1",
+        "value": 0.8,
+        "lowerBound": 0.0,
+        "upperBound": 1.0,
+        "weight": 0.6,
+        "critical": false
+      },
+      {
+        "id": "i2",
+        "value": 0.6,
+        "direction": "BENEFIT",
+        "lowerBound": 0.0,
+        "upperBound": 1.0,
+        "weight": 0.4,
+        "critical": true
+      }
+    ],
+    "processSignals": [
+      {
+        "type": "r1",
+        "severity": 0.3,
+        "lowerBound": 0.0,
+        "upperBound": 1.0,
+        "weight": 1.0
+      }
+    ],
+    "semanticEvidence": {
+      "issues": [
+        {
+          "category": "s1",
+          "severity": 0.5,
+          "lowerBound": 0.0,
+          "upperBound": 1.0,
+          "weight": 1.0
+        }
+      ],
+      "reliability": {
+        "coverage": 1.0,
+        "confidence": 1.0
+      }
+    }
+  },
+  "config": {
+    "axisWeights": {
+      "product": 0.4,
+      "process": 0.3,
+      "semantic": 0.3
+    },
+    "lambda": 1.0,
+    "maxGrade": 30
+  }
+}
