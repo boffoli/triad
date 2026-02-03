@@ -21,6 +21,13 @@ docker build -t triad:latest .
 docker run -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 triad:latest
 ```
 
+Docker (runtime-only, build outside container):
+```bash
+./mvnw -DskipTests package
+docker build -f Dockerfile.runtime -t triad:latest .
+docker run -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 triad:latest
+```
+
 Docker Compose:
 ```bash
 docker compose up --build
@@ -30,6 +37,16 @@ Env vars:
 - `SPRING_PROFILES_ACTIVE=prod` (console logging)
 - `JAVA_OPTS=-Xms256m -Xmx512m` (JVM tuning)
 - `LOG_DIR=/var/log/triad` (only in non-prod)
+
+Makefile shortcuts:
+```bash
+make build
+make test
+make docker
+make docker-run
+make docker-runtime
+make compose
+```
 
 ## Endpoints
 - `GET /api/health`  
