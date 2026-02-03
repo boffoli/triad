@@ -5,6 +5,9 @@ Spring Boot service that implements the layered assessment algorithm from `src/2
 ## Overview
 TRIAD (Traceable Robust Integrated Assessment Decision) exposes a REST API to run a layered assessment pipeline and return both results and trace data.
 
+## End-user deployment
+For non-developers, use the prebuilt Docker image and the instructions in `DEPLOY.md`.
+
 ## Quickstart
 Local run:
 ```bash
