@@ -1,0 +1,7 @@
+target/
+logs/
+reports/
+.git/
+.gitignore
+.DS_Store
+*.log

@@ -17,8 +17,19 @@ LOG_DIR=/var/log/triad ./mvnw spring-boot:run
 
 Docker (console logs, prod profile):
 ```bash
+docker build -t triad:latest .
 docker run -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 triad:latest
 ```
+
+Docker Compose:
+```bash
+docker compose up --build
+```
+
+Env vars:
+- `SPRING_PROFILES_ACTIVE=prod` (console logging)
+- `JAVA_OPTS=-Xms256m -Xmx512m` (JVM tuning)
+- `LOG_DIR=/var/log/triad` (only in non-prod)
 
 ## Endpoints
 - `GET /api/health`  
