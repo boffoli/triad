@@ -56,6 +56,11 @@ echo <ghcr-token> | docker login ghcr.io -u <github-user> --password-stdin
 docker push ghcr.io/<github-user>/triad:latest
 ```
 
+End-user deploy (pull from registry):
+```bash
+docker compose -f docker-compose.prod.yml up -d
+```
+
 ## Configuration
 Environment variables:
 - `SPRING_PROFILES_ACTIVE=prod` (console logging)
