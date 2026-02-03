@@ -6,6 +6,20 @@ This project ships as a Docker image. End users do not need the source code.
 - Docker Desktop or Docker Engine installed and running.
 
 ## Run with Docker Compose (recommended)
+Create a file named `docker-compose.prod.yml` with the following content:
+```yaml
+services:
+  triad:
+    image: ghcr.io/boffoli/triad:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      JAVA_OPTS: "-Xms256m -Xmx512m"
+    restart: unless-stopped
+```
+
+Then run:
 ```bash
 docker compose -f docker-compose.prod.yml up -d
 ```
