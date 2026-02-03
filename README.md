@@ -15,6 +15,11 @@ Override the log directory in dev:
 LOG_DIR=/var/log/triad ./mvnw spring-boot:run
 ```
 
+Docker (console logs, prod profile):
+```bash
+docker run -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 triad:latest
+```
+
 ## Endpoints
 - `GET /api/health`  
   Returns service health and a server timestamp. Useful for readiness checks and uptime monitoring.
