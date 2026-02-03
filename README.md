@@ -2,19 +2,22 @@
 
 Spring Boot service that implements the layered assessment algorithm from `src/2026_EDM-5.pdf`.
 
-## Run
+## Overview
+TRIAD (Traceable Robust Integrated Assessment Decision) exposes a REST API to run a layered assessment pipeline and return both results and trace data.
+
+## Quickstart
+Local run:
 ```bash
 ./mvnw spring-boot:run
 ```
 
-## Containerization (Docker)
-Multi-stage build (recommended):
+Docker (multi-stage build, recommended):
 ```bash
 docker build -t triad:latest .
 docker run -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 triad:latest
 ```
 
-Runtime-only (build outside container):
+Docker (runtime-only, build outside container):
 ```bash
 ./mvnw -DskipTests package
 docker build -f Dockerfile.runtime -t triad:latest .
@@ -36,12 +39,13 @@ make docker-runtime
 make compose
 ```
 
+## Configuration
 Environment variables:
 - `SPRING_PROFILES_ACTIVE=prod` (console logging)
 - `JAVA_OPTS=-Xms256m -Xmx512m` (JVM tuning)
 - `LOG_DIR=/var/log/triad` (only in non-prod)
 
-## Logging
+Logging:
 By default (non-prod), logs go to `logs/` and the console. In production (`SPRING_PROFILES_ACTIVE=prod`), logs go only to console (stdout/stderr).
 
 Override the log directory in dev:
@@ -49,7 +53,7 @@ Override the log directory in dev:
 LOG_DIR=/var/log/triad ./mvnw spring-boot:run
 ```
 
-## Endpoints
+## API
 - `GET /api/health`  
   Returns service health and a server timestamp. Useful for readiness checks and uptime monitoring.
 - `POST /api/assessment`  
@@ -68,22 +72,23 @@ LOG_DIR=/var/log/triad ./mvnw spring-boot:run
 - Swagger UI: `/swagger-ui.html`  
   Interactive OpenAPI documentation with request/response models.
 
-## Schemas & Validation
-## HTTP URLs (served by the app)
+## Schemas and validation
+HTTP URLs (served by the app):
 - OpenAPI: `http://localhost:8080/openapi/triad.openapi.yaml`
 - JSON Schemas: `http://localhost:8080/schema/`
   - e.g. `http://localhost:8080/schema/assessment-request.schema.json`
 - Examples: `http://localhost:8080/examples/equivalence/`
   - e.g. `http://localhost:8080/examples/equivalence/eq-valid-full.json`
 
-- JSON Schema (language-agnostic):
+Local files:
+- JSON Schema:
   - `src/main/resources/static/schema/assessment-request.schema.json`
   - `src/main/resources/static/schema/assessment-result.schema.json`
   - `src/main/resources/static/schema/assessment-trace.schema.json`
   - `src/main/resources/static/schema/health-response.schema.json`
   - `src/main/resources/static/schema/trace-stats.schema.json`
   - `src/main/resources/static/schema/trace-purge-response.schema.json`
-- OpenAPI (single file): `src/main/resources/static/openapi/triad.openapi.yaml`
+- OpenAPI: `src/main/resources/static/openapi/triad.openapi.yaml`
 
 ### Validate with AJV (Node.js)
 ```bash
