@@ -7,21 +7,14 @@ Spring Boot service that implements the layered assessment algorithm from `src/2
 ./mvnw spring-boot:run
 ```
 
-## Logging
-By default (non-prod), logs go to `logs/` and the console. In production (`SPRING_PROFILES_ACTIVE=prod`), logs go only to console (stdout/stderr).
-
-Override the log directory in dev:
-```bash
-LOG_DIR=/var/log/triad ./mvnw spring-boot:run
-```
-
-Docker (console logs, prod profile):
+## Containerization (Docker)
+Multi-stage build (recommended):
 ```bash
 docker build -t triad:latest .
 docker run -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 triad:latest
 ```
 
-Docker (runtime-only, build outside container):
+Runtime-only (build outside container):
 ```bash
 ./mvnw -DskipTests package
 docker build -f Dockerfile.runtime -t triad:latest .
@@ -33,11 +26,6 @@ Docker Compose:
 docker compose up --build
 ```
 
-Env vars:
-- `SPRING_PROFILES_ACTIVE=prod` (console logging)
-- `JAVA_OPTS=-Xms256m -Xmx512m` (JVM tuning)
-- `LOG_DIR=/var/log/triad` (only in non-prod)
-
 Makefile shortcuts:
 ```bash
 make build
@@ -46,6 +34,19 @@ make docker
 make docker-run
 make docker-runtime
 make compose
+```
+
+Environment variables:
+- `SPRING_PROFILES_ACTIVE=prod` (console logging)
+- `JAVA_OPTS=-Xms256m -Xmx512m` (JVM tuning)
+- `LOG_DIR=/var/log/triad` (only in non-prod)
+
+## Logging
+By default (non-prod), logs go to `logs/` and the console. In production (`SPRING_PROFILES_ACTIVE=prod`), logs go only to console (stdout/stderr).
+
+Override the log directory in dev:
+```bash
+LOG_DIR=/var/log/triad ./mvnw spring-boot:run
 ```
 
 ## Endpoints
