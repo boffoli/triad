@@ -19,7 +19,7 @@ public final class BuildContributionsStep implements AssessmentStep {
     public void apply(AssessmentContext context, AssessmentOperations operations) {
         if (context.notEvaluable()) {
             context.setMainContributors(List.of());
-            SemanticLog.LOG.info("Contributi: non disponibili (assenza evidenze).");
+            SemanticLog.LOG.info("Contributions: not available (missing evidence).");
             return;
         }
 
@@ -35,9 +35,9 @@ public final class BuildContributionsStep implements AssessmentStep {
         context.setMainContributors(
             operations.selectMainContributors(contributions, operations.mainContributorsLimit())
         );
-        SemanticLog.LOG.info("Contributi principali: identificati {} elementi.", context.mainContributors().size());
+        SemanticLog.LOG.info("Main contributors: identified {} items.", context.mainContributors().size());
         if (TechnicalLog.LOG.isDebugEnabled()) {
-            TechnicalLog.LOG.debug("Contributi tecnici: {}", context.mainContributors());
+            TechnicalLog.LOG.debug("Technical contributors: {}", context.mainContributors());
         }
     }
 }

@@ -17,7 +17,7 @@ public final class RenormalizeWeightsStep implements AssessmentStep {
     public void apply(AssessmentContext context, AssessmentOperations operations) {
         if (context.notEvaluable()) {
             context.setEffectiveWeights(new EffectiveAxisWeights(null, null, null));
-            SemanticLog.LOG.info("Pesi assi: non applicabili (valutazione non eseguibile).");
+            SemanticLog.LOG.info("Axis weights: not applicable (evaluation not executable).");
             return;
         }
 
@@ -27,9 +27,9 @@ public final class RenormalizeWeightsStep implements AssessmentStep {
             context.hasProcess(),
             context.hasSemantic()
         ));
-        SemanticLog.LOG.info("Pesi assi: ricalibrati sugli assi disponibili.");
+        SemanticLog.LOG.info("Axis weights: rebalanced on available axes.");
         if (TechnicalLog.LOG.isDebugEnabled()) {
-            TechnicalLog.LOG.debug("Pesi tecnici effettivi: {}", context.effectiveWeights());
+            TechnicalLog.LOG.debug("Technical effective weights: {}", context.effectiveWeights());
         }
     }
 }

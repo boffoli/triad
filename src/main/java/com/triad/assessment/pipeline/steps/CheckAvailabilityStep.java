@@ -22,9 +22,9 @@ public final class CheckAvailabilityStep implements AssessmentStep {
         context.setHasSemantic(hasSemantic);
         context.setNotEvaluable(!hasProduct && !hasProcess && !hasSemantic);
         if (context.notEvaluable()) {
-            SemanticLog.LOG.info("Disponibilita evidenze: nessun asse disponibile, valutazione non possibile.");
+            SemanticLog.LOG.info("Evidence availability: no axes available, evaluation not possible.");
         } else {
-            SemanticLog.LOG.info("Disponibilita evidenze: assi disponibili -> prodotto={}, processo={}, semantica={}.",
+            SemanticLog.LOG.info("Evidence availability: available axes -> product={}, process={}, semantic={}.",
                 hasProduct, hasProcess, hasSemantic);
         }
     }

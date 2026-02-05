@@ -19,11 +19,11 @@ public final class MapGradeStep implements AssessmentStep {
             : operations.toGrade(context.globalScore(), context.config().maxGrade());
         context.setGrade(grade);
         if (context.notEvaluable()) {
-            SemanticLog.LOG.info("Mappatura voto: non eseguibile (assenza evidenze).");
+            SemanticLog.LOG.info("Grade mapping: not executable (missing evidence).");
         } else {
-            SemanticLog.LOG.info("Mappatura voto: voto finale calcolato.");
+            SemanticLog.LOG.info("Grade mapping: final grade computed.");
             if (TechnicalLog.LOG.isDebugEnabled()) {
-                TechnicalLog.LOG.debug("Voto tecnico: {}/{}", context.grade(), context.config().maxGrade());
+                TechnicalLog.LOG.debug("Technical grade: {}/{}", context.grade(), context.config().maxGrade());
             }
         }
     }

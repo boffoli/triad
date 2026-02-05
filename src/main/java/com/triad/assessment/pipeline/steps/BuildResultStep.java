@@ -28,6 +28,6 @@ public final class BuildResultStep implements AssessmentStep {
             context.traceId()
         );
         context.setResult(new AssessmentResult(context.grade(), context.config().maxGrade(), trace));
-        SemanticLog.LOG.info("Valutazione completata: risultato disponibile.");
+        SemanticLog.LOG.info("Assessment completed: result available.");
     }
 }

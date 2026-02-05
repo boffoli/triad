@@ -19,11 +19,11 @@ public final class FuseScoresStep implements AssessmentStep {
             : operations.computeGlobalScore(context.axisScores(), context.effectiveWeights());
         context.setGlobalScore(globalScore);
         if (context.notEvaluable()) {
-            SemanticLog.LOG.info("Fusione punteggi: non eseguibile (assenza evidenze).");
+            SemanticLog.LOG.info("Score fusion: not executable (missing evidence).");
         } else {
-            SemanticLog.LOG.info("Fusione punteggi: combinazione degli assi completata.");
+            SemanticLog.LOG.info("Score fusion: axis combination completed.");
             if (TechnicalLog.LOG.isDebugEnabled()) {
-                TechnicalLog.LOG.debug("Punteggio globale tecnico: {}", context.globalScore());
+                TechnicalLog.LOG.debug("Technical global score: {}", context.globalScore());
             }
         }
     }

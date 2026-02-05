@@ -16,7 +16,7 @@ import com.triad.assessment.trace.NormalizedEvidence;
 public final class NormalizeIndicatorsStep implements AssessmentStep {
     @Override
     public void apply(AssessmentContext context, AssessmentOperations operations) {
-        SemanticLog.LOG.info("Normalizzazione: indicatori resi confrontabili in scala 0-1.");
+        SemanticLog.LOG.info("Normalization: indicators mapped to the 0-1 scale.");
         context.setProductIndicators(operations.normalizeProducts(context.evidence()));
         context.setProcessSignals(operations.normalizeProcess(context.evidence()));
         NormalizedSemantic normalizedSemantic = operations.normalizeSemantic(context.evidence());
@@ -30,7 +30,7 @@ public final class NormalizeIndicatorsStep implements AssessmentStep {
         ));
         if (TechnicalLog.LOG.isDebugEnabled()) {
             TechnicalLog.LOG.debug(
-                "Normalizzazione tecnica: prodotto={}, processo={}, semantica={}, affidabilitaSem={}",
+                "Technical normalization: product={}, process={}, semantic={}, semanticReliability={}",
                 context.productIndicators().size(),
                 context.processSignals().size(),
                 context.semanticIssues().size(),

@@ -32,7 +32,7 @@ public final class AssessmentPipeline {
         MDC.put("traceId", traceId);
         try {
             AssessmentContext context = new AssessmentContext(evidence, config, traceId);
-            SemanticLog.LOG.info("Valutazione avviata (traceId={}).", traceId);
+            SemanticLog.LOG.info("Assessment started (traceId={}).", traceId);
             for (AssessmentStep step : steps) {
                 if (logger.isDebugEnabled()) {
                     logger.debug("Pipeline step start: {}", step.getClass().getSimpleName());
@@ -42,7 +42,7 @@ public final class AssessmentPipeline {
                     logger.debug("Pipeline step done: {}", step.getClass().getSimpleName());
                 }
             }
-            SemanticLog.LOG.info("Valutazione terminata (traceId={}).", traceId);
+            SemanticLog.LOG.info("Assessment finished (traceId={}).", traceId);
             return context.result();
         } finally {
             MDC.remove("traceId");

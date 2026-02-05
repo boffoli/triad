@@ -21,10 +21,10 @@ public final class AggregateAxesStep implements AssessmentStep {
             context.semanticReliability(),
             context.config()
         ));
-        SemanticLog.LOG.info("Aggregazione assi: punteggi calcolati per prodotto, processo e semantica.");
+        SemanticLog.LOG.info("Axis aggregation: scores computed for product, process, and semantic.");
         if (TechnicalLog.LOG.isDebugEnabled()) {
             TechnicalLog.LOG.debug(
-                "Punteggi tecnici: PQ={}, PrQ={}, SA={}",
+                "Technical scores: PQ={}, PrQ={}, SA={}",
                 context.axisScores().productQuality(),
                 context.axisScores().processQuality(),
                 context.axisScores().semanticAlignment()
