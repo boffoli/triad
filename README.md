@@ -1,6 +1,6 @@
 # Triad
 
-[![Docker Image](https://img.shields.io/badge/ghcr.io-boffoli%2Ftriad-blue)](https://github.com/users/boffoli/packages/container/triad)
+[![Docker Image](https://img.shields.io/badge/ghcr.io-%3Cowner%3E%2Ftriad-blue)](https://github.com/users/<owner>/packages/container/triad)
 [![Deploy Guide](https://img.shields.io/badge/deploy-DEPLOY.md-brightgreen)](DEPLOY.md)
 
 Spring Boot service that implements the layered assessment algorithm from `src/2026_EDM-5.pdf`.

@@ -10,7 +10,7 @@ Create a file named `docker-compose.prod.yml` with the following content:
 ```yaml
 services:
   triad:
-    image: ghcr.io/boffoli/triad:latest
+    image: ghcr.io/<owner>/triad:latest
     ports:
       - "8080:8080"
     environment:
@@ -42,9 +42,10 @@ docker compose -f docker-compose.prod.yml up -d
 
 ## Run with Docker (single command)
 ```bash
-docker run -d --name triad -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 ghcr.io/boffoli/triad:latest
+docker run -d --name triad -e SPRING_PROFILES_ACTIVE=prod -p 8080:8080 ghcr.io/<owner>/triad:latest
 ```
 
 ## Notes
 - The container listens on port 8080.
 - Logs are available with `docker logs -f triad`.
+- Replace `<owner>` with your registry username or org.

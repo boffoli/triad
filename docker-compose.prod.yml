@@ -1,6 +1,6 @@
 services:
   triad:
-    image: ghcr.io/boffoli/triad:latest
+    image: ghcr.io/<owner>/triad:latest
     ports:
       - "8080:8080"
     environment:
